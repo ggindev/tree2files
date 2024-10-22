@@ -1,71 +1,107 @@
-# tree2files README
+# Tree Structure to Files - VS Code Extension
 
-This is the README for your extension "tree2files". After writing up a brief description, we recommend including the following sections.
+A simple VS Code extension that converts a tree-like folder structure into actual directories and files.
 
-## Features
+## Usage
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+1. Open command palette (`Ctrl+Shift+P` or `Cmd+Shift+P`)
+2. Run `Create Folders and Files from Tree Structure`
+3. Paste your tree structure in the input box
 
-For example if there is an image subfolder under your extension project workspace:
+### Supported Formats
 
-\!\[feature X\]\(images/feature-x.png\)
+```
+# Standard Format
+root
+├── folder1
+│   ├── file1.txt
+│   └── file2.txt
+└── folder2
+    └── file3.txt
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+# Compact Format (same line files)
+root
+├── folder1
+│   └── file1.txt file2.txt package.json
+└── folder2
+```
 
-## Requirements
+### Features
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Creates nested directory structures
+- Handles multiple files on the same line
+- Supports common tree symbols (├, │, └, ─)
+- Auto-creates parent directories for files
+- Skips existing files/folders
 
-## Extension Settings
+## Examples
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+```
+# Input
+monorepo
+├── packages
+│   ├── common
+│   ├── web-app
+│   └── browser-extension
+├── package.json
+└── tsconfig.json
 
-For example:
+# Result
+monorepo/
+  ├── packages/
+  │   ├── common/
+  │   ├── web-app/
+  │   └── browser-extension/
+  ├── package.json
+  └── tsconfig.json
+```
 
-This extension contributes the following settings:
+## Potential Improvements
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+1. **File Content Templates**
+   - Add basic content for common file types
+   - Custom templates for package.json, tsconfig.json, etc.
 
-## Known Issues
+2. **Enhanced UI**
+   - Tree preview before creation
+   - Visual tree builder
+   - Progress indicator for large structures
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+3. **Configuration Options**
+   - Customizable file templates
+   - Ignore patterns
+   - Default root directory setting
 
-## Release Notes
+4. **Advanced Features**
+   - Copy existing tree structure
+   - Generate tree from existing folders
+   - Export tree structure to different formats
+   - Bulk file content initialization
+   - Integration with git init
 
-Users appreciate release notes as you update your extension.
+5. **Error Handling**
+   - Better validation of input format
+   - Detailed error messages
+   - Rollback on partial failures
+   - Permission checks before creation
 
-### 1.0.0
+6. **Format Support**
+   - More tree format variations
+   - Custom symbols support
+   - Import from JSON/YAML
 
-Initial release of ...
+## Known Limitations
 
-### 1.0.1
+- No file content initialization
+- Limited tree format validation
+- No undo operation
+- No support for file sizes or permissions
+- Basic error handling
 
-Fixed issue #.
+## Contributing
 
-### 1.1.0
+Feel free to submit issues and enhancement requests!
 
-Added features X, Y, and Z.
+## License
 
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+MIT

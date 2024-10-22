@@ -34,6 +34,10 @@
     "lint": "eslint src",
     "test": "vscode-test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ggindev/tree3files.git"
+ },
   "devDependencies": {
     
     "@types/fs-extra": "^11.0.4",
