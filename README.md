@@ -1,3 +1,6 @@
+![tree2file and folder structure](https://github.com/ggindev/tree2files/blob/master/logo.png?raw=true)
+
+
 # Tree Structure to Files - VS Code Extension
 
 A simple VS Code extension that converts a tree-like folder structure into actual directories and files.
