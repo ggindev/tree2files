@@ -1,110 +1,62 @@
 ![tree2file and folder structure](https://github.com/ggindev/tree2files/blob/master/logo.png?raw=true)
 
+# Tree Structure to Files
 
-# Tree Structure to Files - VS Code Extension
-
-A simple VS Code extension that converts a tree-like folder structure into actual directories and files.
+Convert text-based tree structures into real directories and files in VS Code.
 
 ## Usage
 
-1. Open command palette (`Ctrl+Shift+P` or `Cmd+Shift+P`)
-2. Run `Create Folders and Files from Tree Structure`
-3. Paste your tree structure in the input box
+1. `Ctrl+Shift+P` → `Create Folders and Files from Tree Structure`
+2. Paste your tree:
+```
+project
+├── src
+│   ├── index.js
+│   └── styles.css
+└── package.json
+```
+3. Press Enter
 
-### Supported Formats
+## Supported Formats
 
 ```
-# Standard Format
+# Basic
 root
-├── folder1
-│   ├── file1.txt
-│   └── file2.txt
-└── folder2
-    └── file3.txt
+└── file.txt
 
-# Compact Format (same line files)
+# Standard Tree
 root
-├── folder1
-│   └── file1.txt file2.txt package.json
-└── folder2
+├── folder
+│   └── file.txt
+└── config.json
+
+# Inline Files
+root
+└── folder file1.txt file2.txt
 ```
 
-### Features
+## Key Features
 
-- Creates nested directory structures
-- Handles multiple files on the same line
-- Supports common tree symbols (├, │, └, ─)
-- Auto-creates parent directories for files
+- Creates nested directories and files
+- Handles common tree symbols (├, │, └, ─)
 - Skips existing files/folders
+- Works with multiple files per line
 
-## Examples
+## Next Up
 
-```
-# Input
-monorepo
-├── packages
-│   ├── common
-│   ├── web-app
-│   └── browser-extension
-├── package.json
-└── tsconfig.json
+1. File Templates
+   - Basic content for package.json, tsconfig.json
+   - Custom templates support
 
-# Result
-monorepo/
-  ├── packages/
-  │   ├── common/
-  │   ├── web-app/
-  │   └── browser-extension/
-  ├── package.json
-  └── tsconfig.json
-```
+2. Enhanced UX
+   - Tree preview
+   - Structure validation
+   - Quick undo
 
-## Potential Improvements
+3. Import/Export
+   - Copy from folders
+   - Save templates
 
-1. **File Content Templates**
-   - Add basic content for common file types
-   - Custom templates for package.json, tsconfig.json, etc.
+## Issues?
 
-2. **Enhanced UI**
-   - Tree preview before creation
-   - Visual tree builder
-   - Progress indicator for large structures
-
-3. **Configuration Options**
-   - Customizable file templates
-   - Ignore patterns
-   - Default root directory setting
-
-4. **Advanced Features**
-   - Copy existing tree structure
-   - Generate tree from existing folders
-   - Export tree structure to different formats
-   - Bulk file content initialization
-   - Integration with git init
-
-5. **Error Handling**
-   - Better validation of input format
-   - Detailed error messages
-   - Rollback on partial failures
-   - Permission checks before creation
-
-6. **Format Support**
-   - More tree format variations
-   - Custom symbols support
-   - Import from JSON/YAML
-
-## Known Limitations
-
-- No file content initialization
-- Limited tree format validation
-- No undo operation
-- No support for file sizes or permissions
-- Basic error handling
-
-## Contributing
-
-Feel free to submit issues and enhancement requests!
-
-## License
-
-MIT
+Open an issue with your tree structure and expected result.
