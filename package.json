@@ -3,6 +3,7 @@
   "displayName": "Tree to File System",
   "description": "turm ascii trees into filesystems",
   "version": "0.0.1",
+  "publisher": "1OGinDEV",
   "engines": {
     "vscode": "^1.94.0"
   },
